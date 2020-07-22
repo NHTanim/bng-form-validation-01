@@ -1,0 +1,25 @@
+form{
+    width: 500px;
+    background: #555;
+    margin: auto;
+    padding: 20px;
+}
+input{
+  width: 90%;
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  border-bottom: 20px;
+  padding: 0 15px;
+  box-sizing: border-box;
+  margin-top: 15px;
+  border: none;
+}
+.btn:hover{
+  background: rgb(55, 192, 226);
+  color: #fff;
+  border: none;
+}
+.error_color{
+    color: red;
+}
