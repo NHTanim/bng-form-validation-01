@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <div id="name_error" class="error_color"></div>
+        <input type="text" name="name" id="name" placeholder="Name"></br>
+        
+        <div id="username_error" class="error_color"></div>
+        <input type="text" name="user name" id="uname" placeholder="User name"></br>
+
+        <input class="btn" type="submit" value="Submit" onclick="return valid()">
+    </form>
+
+
+    <script>
+
+        var nerror = document.getElementById("name_error");
+        var fname = document.getElementById("name");
+
+        var unerror = document.getElementById("username_error");
+        var f_uname = document.getElementById("uname");
+
+
+        // valid function start
+        function valid() {
+
+
+            // start name jonn.
+
+            // fname er value jodi faka hoy tahole nicher condition e jabe;
+            if (fname.value == "") {
+                // alert("Enter your name");
+                
+                // variable name.style diye css kora jay;
+                fname.style.border="2px solid red";
+
+                nerror.innerHTML="Enter your name";
+                
+                //mouce type point ante .focus() eta drkr hoy;
+                fname.focus();   
+
+                // function sob smy return krte hoy;
+                return false;
+
+            }
+
+
+            //  8 character niche fname hobe na condition.
+               if (fname.value.length <=8) {
+                   fname.style.border = "2px solid red";
+                   nerror.innerHTML ="Your name must 8 character";
+                   fname.focus();
+                   return false;
+               }
+            // end name er jonno;
+
+
+
+
+            // start user name jonno.
+            if (f_uname.value == "" ) {
+                f_uname.style.border ="2px solid red";
+                unerror.innerHTML ="Enter your user name";
+                f_uname.focus();
+                return false;
+
+            }
+            // user name 8 character;
+            if (f_uname.value.length <=8) {
+                f_uname.style.border ="2px solid red";
+                unerror.innerHTML = "Your user name must 8 character";
+                f_uname.focus();
+                return false;
+            }
+            // end user name jonno.
+        }
+    //    valid function stop ;
+
+
+
+ 
+
+    // 
+    // 
+    // 
+    // error function start.
+    // jodi from valid full fill hoy tahole sb red border comment chole jabe.
+       function error (){
+
+
+
+    // start name er jonno.
+        //   from jodi khali na thake ___
+          if (fname.value != "" ) {
+            //   border hobe white,
+              fname.style.border="2px solid #ddd"
+            //   innerhtml hobe blank;
+              nerror.innerHTML= " ";
+          }
+      
+    // end name er jonno.
+
+
+
+
+    // start user name jonno.
+      if (f_uname.value != " ") {
+          f_uname.style.border = "2px solid #ddd"
+          unerror.innerHTML =" ";
+      } 
+
+       }
+    // end user name jonno.
+    // error function stop.
+
+   
+   // 
+  //  addevent function from valid hole mouce sorale lal border othe jabe r text fullfill dekhabe;  
+   fname.addEventListener('blur',error,false);
+   f_uname.addEventListener('blur',error,false);    
+
+    </script>
+
+
+</body>
+</html>
